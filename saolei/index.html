@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,user-scalable=no">
+
+<title>扫雷游戏</title>
+<link rel="stylesheet" type="text/css" href="./css/style.css" />
+</head>
+<body style="overflow: hidden;">
+	<div data-role="page">
+		<div data-role="header" data-position="fixed">
+			<h1>扫雷</h1>
+		</div>
+		<div class="wrap">
+			<dl>
+				<dt>当前级别</dt>
+				<dd>
+					<select></select>
+				</dd>
+				<div class="clear"></div>
+				<dt>剩余雷数</dt>
+				<dd>99</dd>
+				<div class="clear"></div>
+				<dt>游戏耗时</dt>
+				<dd>0秒</dd>
+				<div class="clear"></div>
+				<dt sytle="float:center;">
+					<button id="flagButton">开</button>
+				</dt>
+			</dl>
+			<div class="clear"></div>
+			<canvas width="600" height="320"
+				style="background: rgb(221, 221, 221);"></canvas>
+
+		</div>
+
+	</div>
+	<script>
+  var imageData = 'data:image/gif;base64,R0lGODlhXwATANUAAAAAAP////8AAP7+/v39/fz8/Pr6+vn5+fDw8Ovr6+rq6uXl5eHh4eDg4Nzc3NnZ2djY2NXV1dTU1NPT09LS0s3NzczMzMvLy8rKysfHx8bGxsDAwL29vbCwsK2traGhoaCgoJ+fn56enpycnJmZmZiYmP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAACYALAAAAABfABMAAAb/wIBwSCwKDxGjkohcOpGmqHRKrVqvUeGAMOh6v92Co6Plgs9icmB7Ro+x8Ph1jWAs7vj8QvHwjOh2enp8foCCg30jcouLawwaFZGSkxYSGyQhjpCTnJWXmQOPnJ2WmFgAjFOocwMLFhOwsbITDxkhoK6zurW3a7m6srwhp3ICAqpTxlK+r8CwFBC2uM2xxrHQ0syyANwAz9G3VKjd3CarVsrkqMrLrRXOExQUDxq97tXGAs/z9bjvsNwAApBHL5w4deeuGFPHrt2Cf8AI9vP1L5+1ePzsPYwVcAI3iQalcBOiDg4AYwG4LaRCER6sgv7wXXw58Z6ujjAPkiRn8qQA/5/lprSUJS9YzY2yZtI6CvFZx6UhEUqtwnAhzyw2r1EwqrFpPG+xYA7lCJZmyChSg17plq8by6zOxMIFyDXmtrJQh6lK23Oh1beuJGAEJjcwRnJhj1YavKsfVYTFfqo8Btgr0Yx202IeK3BfTmQlE1axypayQ69FMUKoB2Ko5tUhWs/tKA82CGKRRUppaGJNAloPgj+AAEE4hAYYYvsGbrx48OPJZf8W/tz5cOSxccPhnbBhAAMPNmgYT768hgsclIMXb948evXh27tPfzuV/SoHHHgocat/fxC3iBAbCPnt559/AIYgIAgE6sffgbckuGB991VoQgQdjBAhhAkO+BUBhhrGxuF/IHyY4YYHdsjgBxZaGAQAOw==';
+</script>
+	<script src="./js/main.js"></script>
+</body>
+</html>
