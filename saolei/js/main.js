@@ -10,35 +10,15 @@ var unregister = function() {
 
 //Initialize function
 var init = function () {
-    // register once
-    if ( backEventListener !== null ) {
-        return;
-    }
-    
-    // TODO:: Do your initialization job
-    console.log("init() called");
-    
-    var backEvent = function(e) {
-        if ( e.keyName == "back" ) {
-            try {
-                if ( $.mobile.urlHistory.activeIndex <= 0 ) {
-                    // if first page, terminate app
-                    unregister();
-                } else {
-                    // move previous page
-                    $.mobile.urlHistory.activeIndex -= 1;
-                    $.mobile.urlHistory.clearForward();
-                    window.history.back();
-                }
-            } catch( ex ) {
-                unregister();
-            }
-        }
-    }
-    
-    // add eventListener for tizenhwkey (Back Button)
-    document.addEventListener( 'tizenhwkey', backEvent );
-    backEventListener = backEvent;
+	window.addEventListener('tizenhwkey', function(e) {
+		if(e.keyName == "back") {
+			try {
+				tizen.application.getCurrentApplication().exit();
+			} catch (error) {
+				console.error("getCurrentApplication(): " + error.message);
+			}
+		}
+	},false);
 };
 
 
@@ -62,7 +42,7 @@ var imageData = 'data:image/gif;base64,R0lGODlhXwATANUAAAAAAP////8AAP7+/v39/fz8/
     btnFont: '#ff0000',//按钮字体颜色
     mask: 'rgba(0,0,0,0.8)',//遮罩背景颜色，半透明
     number: ['#0000ff', '#008000', '#ff0000', '#000080', '#800000', '#008080', '#000000', '#808080'],//数字颜色
-    bombBg: '#ff0000',//点击使爆炸游戏结束的方块背景
+    bombBg: '#000000',//点击使爆炸游戏结束的方块背景
     overFont: '#ffffff',//结束文字颜色
   };
   var levels = [
@@ -128,8 +108,6 @@ var imageData = 'data:image/gif;base64,R0lGODlhXwATANUAAAAAAP////8AAP7+/v39/fz8/
     	          } else {
     	            mineSweeping.startedClickHandler(e);
     	          }
-
-    		 
 
       });
       
@@ -539,6 +517,4 @@ var imageData = 'data:image/gif;base64,R0lGODlhXwATANUAAAAAAP////8AAP7+/v39/fz8/
   mineSweeping = new MineSweeping();
 })(window, document);
 
-
-$(document).bind( 'pageinit', init );
-$(document).unload( unregister );
+window.onload = init;

@@ -1,8 +1,8 @@
 body {
-	font-family: 宋体, Verdana, Arial, Helvetica, sans-serif;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	margin: 0;
-	background-color: #00FFFF;
+	background-color: #FFFFFF;
 	text-align: center;
 	width: 100%;
 }
@@ -27,7 +27,7 @@ body {
 }
 
 .wrap dd,.wrap dt {
-	float: left;
+	float: left; 
 	line-height: 1.5;
 	color: #ff0000;
 	font-weight: bold;
